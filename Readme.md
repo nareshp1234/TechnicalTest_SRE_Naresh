@@ -1,7 +1,7 @@
 # Commands
 
 ## Dockerfile and Docker-compose code
-Working Directory : Tui_App\tuiapp
+Working Directory : Tui_App\tuiapp  
 Docker-compose up
 
 ## Prometheus 
@@ -10,22 +10,22 @@ http://127.0.0.1:9090/targets
 ## Building Image
 docker build -t tuiapp_web .
 
-## Django Application url's :
-http://127.0.0.1:8000/polls/
-http://127.0.0.1:8000/admin/
+## Django Application url's : 
+http://127.0.0.1:8000/polls/  
+http://127.0.0.1:8000/admin/  
 
-Added livelinees probe in djago deployment 
-Commented Liveliness probe as healthcheck is not added
+Added livelinees probe in djago deployment   
+Commented Liveliness probe as healthcheck is not added  
 
-### since i am using local docker image instead of repository i have used this tag.
+### since i am using local docker image instead of repository i have used this tag. 
 imagepullpolicy never 
 
-## Kubernetes code
-Working Directory : Tui_App\tuiapp\deploy\kubernetes
-Kubernetes files
+## Kubernetes code  
+Working Directory : Tui_App\tuiapp\deploy\kubernetes  
+Kubernetes files  
 
-## Steps for running kubernetes files(on minikube I have tested)
-eval $(minikube docker-env)
+## Steps for running kubernetes files(on minikube I have tested)  
+eval $(minikube docker-env) 
 
 Apply Manifests
 $ kubectl apply -f postgres/
