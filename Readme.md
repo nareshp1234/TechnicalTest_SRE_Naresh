@@ -4,6 +4,9 @@
 Working Directory : Tui_App\tuiapp
 Docker-compose up
 
+## Prometheus 
+http://127.0.0.1:9090/targets
+
 ## Building Image
 docker build -t tuiapp_web .
 
@@ -30,6 +33,8 @@ $ kubectl apply -f django/
 
 # Show service in browser
 $ minikube service django-service  # Wait if not ready
+
+
 
 
 ## Theoritical Part 

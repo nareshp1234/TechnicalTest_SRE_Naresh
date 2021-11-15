@@ -10,7 +10,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     networks: ['mynetwork']    
-  web:
+  tuiapp:
+    container_name: tuiapp 
     build: .
     command:  ['/bin/bash', 'entrypoint.sh'] 
     volumes:
@@ -22,5 +23,19 @@ services:
     links:
       - db:db      
     networks: ['mynetwork']
+    
+  prometheus:
+       container_name: prometheus     
+       image: prom/prometheus:v2.22.0
+       volumes:
+          - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+       restart: always
+       ports:
+          - "9090:9090"
+       command:
+          - '--config.file=/etc/prometheus/prometheus.yml'
+       depends_on:
+          - tuiapp
+       networks: ['mynetwork']
 networks: {mynetwork: {}}
  
